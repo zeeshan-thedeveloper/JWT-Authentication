@@ -4,8 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// Set up Global configuration access
+// dotenv.config();
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const  {generateRouteToken,verifyRouteToken} = require('./routes/TokenManager');
 
 var app = express();
 
@@ -20,7 +23,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/tokenManager', generateRouteToken);
+app.use('/tokenManager', verifyRouteToken);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

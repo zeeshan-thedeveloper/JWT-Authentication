@@ -3,10 +3,15 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.main_container{
+  width: 100%;
 }
+.form_container{
 
-h1 {
-  color: #096083;
+}
+.tokenHolder{
+  height: 70px;
+  /* background-color: blue; */
+  margin-top: 1rem;
+  overflow-y: scroll;
 }
